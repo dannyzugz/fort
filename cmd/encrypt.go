@@ -5,6 +5,7 @@ package cmd
 
 import (
 	"fmt"
+	"os"
 
 	"github.com/DanyZugz/Encryptdata/internal/controllers"
 	"github.com/spf13/cobra"
@@ -22,8 +23,12 @@ This application is a tool to generate the needed files
 to quickly create a Cobra application.`,
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("encrypt called")
+		dir, _ := os.Getwd()
+		fmt.Println(dir)
 
-		controllers.Encrypt(args[0])
+		pss := controllers.GetPassword()
+
+		controllers.Encrypt(args[0], pss)
 	},
 }
 

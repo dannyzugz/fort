@@ -11,9 +11,13 @@ import (
 
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
-	Use:   "cipher",
-	Short: "An encrypt for files and folders",
-	Long:  `Encrypt data is a tool for encrypting files and folders and mantain this as a private documents`,
+	Use:   "fet",
+	Short: "This is a tool to encrypt system folders and files",
+	Long: `This is a tool to encrypt system folders and files to keep files private. 
+	Whoever reviews the encrypted files will be able to see the names and extensions but the content will not be available.
+	You can see the available commands and their respective functions using -help 
+	
+	This tool was developed by Daniel Aguilar`,
 	// Uncomment the following line if your bare application
 	// has an action associated with it:
 	// Run: func(cmd *cobra.Command, args []string) { },
