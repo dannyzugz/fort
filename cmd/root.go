@@ -13,19 +13,25 @@ import (
 var rootCmd = &cobra.Command{
 	Use:   "fet",
 	Short: "This is a tool to encrypt system folders and files",
-	Long: `This is a tool to encrypt system folders and files to keep files private. 
+	Long: `
+	This is a tool to encrypt system folders and files to keep files private. 
 	Whoever reviews the encrypted files will be able to see the names and extensions but the content will not be available.
 	You can see the available commands and their respective functions using -help 
 	
-	This tool was developed by Daniel Aguilar`,
+	This tool was developed by Daniel Aguilar el dani`,
+
+	CompletionOptions: cobra.CompletionOptions{
+		DisableDefaultCmd: true,
+	},
 	// Uncomment the following line if your bare application
 	// has an action associated with it:
-	// Run: func(cmd *cobra.Command, args []string) { },
+	Run: func(cmd *cobra.Command, args []string) {},
 }
 
 // Execute adds all child commands to the root command and sets flags appropriately.
 // This is called by main.main(). It only needs to happen once to the rootCmd.
 func Execute() {
+	// cobra.SetRootCommand(rootCmd)
 	err := rootCmd.Execute()
 	if err != nil {
 		os.Exit(1)

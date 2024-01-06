@@ -17,13 +17,6 @@ import (
 
 func Encrypt(path string, pss []byte) {
 
-	/* var seed string
-
-	fmt.Print("Enter your seed: ")
-	fmt.Scanln(&seed) */
-
-	// dk := pbkdf2.Key(pss, nonce, 4096, 32, sha1.New)
-
 	files, _ := os.ReadDir(path)
 	fmt.Println("Encripting ....")
 
@@ -34,56 +27,6 @@ func Encrypt(path string, pss []byte) {
 		}
 	}
 }
-
-/*func encryptFile(filename string) {
-
-	 key := make([]byte, 16) // 128 bit key
-	_, err := io.ReadFull(rand.Reader, key)
-	if err != nil {
-		return err
-	}
-	fmt.Print("the key is: ")
-	fmt.Println(key)
-
-	// key := []byte("passphrasewhichneedstobe32bytes!") // replace with your key
-
-	block, err := aes.NewCipher(key)
-	if err != nil {
-		return err
-	}
-
-	nonce := make([]byte, 12) // 96 bit nonce
-	_, err = io.ReadFull(rand.Reader, nonce)
-	if err != nil {
-		return err
-	}
-	fmt.Print("the nonce is: ")
-	fmt.Println(nonce)
-
-	aesgcm, err := cipher.NewGCM(block)
-	if err != nil {
-		return err
-	}
-
-	data, err := os.ReadFile(filename)
-	if err != nil {
-		return err
-	}
-
-	ciphertext := aesgcm.Seal(nil, nonce, data, nil)
-
-	fmt.Print("the ciphertext is: ")
-	fmt.Println(ciphertext)
-
-	err = os.WriteFile(filename, ciphertext, 0644)
-	if err != nil {
-		return err
-	}
-
-	fmt.Printf("\nThe file %s was encrypted.\n", filename)
-
-	return nil
-}*/
 
 func encryptFile(filename string, pss []byte) {
 
