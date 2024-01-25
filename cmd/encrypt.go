@@ -7,14 +7,14 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/DanyZugz/Encryptdata/internal/controllers"
+	"github.com/dannyzugz/fort/internal/controllers"
 	"github.com/spf13/cobra"
 )
 
 // encryptCmd represents the encrypt command
 var encryptCmd = &cobra.Command{
 	Use:   "encrypt",
-	Short: "A brief description of your command",
+	Short: "provide encryption to secure and protect data.",
 	Long: `A longer description that spans multiple lines and likely contains examples
 and usage of using your command. For example:
 

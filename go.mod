@@ -1,4 +1,4 @@
-module github.com/DanyZugz/Encryptdata
+module github.com/dannyzugz/fort
 
 go 1.21.3
 
